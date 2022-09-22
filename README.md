@@ -8,7 +8,7 @@ Procedimiento:
 
 *BASE DE DATOS*
 
-Ejecutar script de creacion de base de datos "BD-Challenge.sql" que se encuentra en la carpeta "ChallengeDataBase" 2) 
+Ejecutar script de creacion de base de datos "BD-Challenge.sql" que se encuentra en la carpeta "BaseDatos" 2) 
 
 *BACKEND*
 
