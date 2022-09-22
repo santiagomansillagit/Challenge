@@ -1,0 +1,101 @@
+<section class="container">
+  <div class="header-nuevo">
+      <h1 *ngIf="!isEdit">Crear nuevo usuario</h1>
+      <h1 *ngIf="isEdit">Editar usuario</h1>
+  </div>
+  <form (submit)="guardarAndUpdate()" [formGroup]="form" >
+
+  <div class="body-create">
+
+      <mat-form-field  style="width: 80% ;">
+      <div class="mb-3 control">
+
+          <input type="text" class="" id="exampleFormControlInput1" maxlength="30" (keypress)="keyPress($event)" placeholder="Nombre" matInput autocomplete="off" formControlName="nombre">
+        </div>
+      </mat-form-field>
+
+      <mat-form-field  style="width: 80% ;">
+          <div class="mb-3 control">
+
+              <input type="text" class="" id="exampleFormControlInput2" maxlength="30" (keypress)="keyPress($event)" placeholder="Apellido" matInput autocomplete="off" formControlName="apellido">
+            </div>
+      </mat-form-field>
+
+      <!-- <mat-form-field appearance="fill" style="width: 480px ;">
+        <mat-label>Pais</mat-label>
+        <select matNativeControl [(ngModel)]="selectedCountry" formControlName="country">
+          <option value="" selected></option>
+          <option *ngFor="let country of countries" [value]="country.Id">
+            {{country.name}}
+          </option>
+        </select>
+      </mat-form-field> -->
+
+      <mat-form-field   style="width: 80%  ;">
+          <div class="mb-3 control">
+
+              <input type="number" class="" id="exampleFormControlInput3" placeholder="Telefono" matInput autocomplete="off" formControlName="telefono">
+            </div>
+      </mat-form-field>
+
+      <mat-form-field  style="width: 80% ;">
+          <div class="mb-3 control">
+
+              <input type="text" class="" id="exampleFormControlInput4" placeholder="Email *" matInput autocomplete="off" formControlName="email">
+            </div>
+      </mat-form-field>
+<!--
+      <mat-form-field  style="width: 80% ;">
+              <div class="mb-3 control">
+
+                  <input type="date" class="" id="exampleFormControlInput5" placeholder="FechaNacimiento" matInput autocomplete="off" formControlName="fechaNacimiento">
+                </div>
+      </mat-form-field> -->
+
+         <!-- fecha nacimiento -->
+         <mat-form-field style="width: 80% ;">
+          <div class=" control">
+
+            <!-- <mat-label>Fecha de Nacimiento</mat-label> -->
+            <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" [disabled]="false"
+              placeholder="Fecha de Nacimiento">
+
+            <mat-datepicker-toggle matSuffix [for]="picker" [disabled]="false"></mat-datepicker-toggle>
+            <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+          </div>
+        </mat-form-field>
+
+      <!-- <mat-form-field  style="width: 80% ;">
+        <div class="mb-3 control">
+
+            <input type="text" class="" id="exampleFormControlInput6" placeholder="Pais" matInput autocomplete="off" formControlName="pais">
+          </div>
+      </mat-form-field> -->
+
+      <mat-form-field appearance="fill" style="width: 80% ;">
+        <mat-label>País</mat-label>
+        <select matNativeControl [(ngModel)]="selectedPais" formControlName="paises">
+          <option value="" selected></option>
+          <option *ngFor="let pais of paises "  [value]="pais?.cca2">
+            {{pais.name?.common }} ( {{pais?.cca2}} )
+          </option>
+        </select>
+      </mat-form-field>
+
+
+      <mat-slide-toggle [checked]="checked" (change)="toggleChanges($event)" formControlName="check" >Recibe informacion</mat-slide-toggle>
+
+
+  </div>
+
+  <div class="nuevo-usuario-footer">
+      <button routerLink="/main/usuarios"  class="btn btn-secundary">Cancelar</button>
+      <button type="submit" class="btn btn-primary" *ngIf="!isEdit" [disabled]="form.invalid">Guardar</button>
+      <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="form.invalid">Actualizar</button>
+
+  </div>
+
+</form>
+
+
+</section>

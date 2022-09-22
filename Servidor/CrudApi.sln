@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudApi", "CrudApi\CrudApi.csproj", "{A513D5DB-9C07-4487-B3B0-02B7F3C1A13A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A513D5DB-9C07-4487-B3B0-02B7F3C1A13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A513D5DB-9C07-4487-B3B0-02B7F3C1A13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A513D5DB-9C07-4487-B3B0-02B7F3C1A13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A513D5DB-9C07-4487-B3B0-02B7F3C1A13A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CB376A5-D213-49CB-AB31-4F4BB2D5AC9A}
+	EndGlobalSection
+EndGlobal

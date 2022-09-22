@@ -1,0 +1,21 @@
+.body-create{
+  background-color: #DDDEDE;
+  border-radius: 5px;
+  max-width: 450px;
+  margin: auto;
+  padding: 2em;
+}
+
+.header-nuevo
+{
+  text-align: center;
+}
+
+.nuevo-usuario-footer{
+  background-color: transparent;
+  border-radius: 5px;
+  max-width: 450px;
+  margin: auto;
+  padding: 2em;
+  text-align: end;
+}

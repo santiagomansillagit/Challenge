@@ -1,0 +1,97 @@
+<section class="arboles-admin__contenedor">
+
+  <h1 style="color :whitesmoke; text-align: center;" class="fix-margin"> Gestión de usuarios</h1>
+  <!-- <span class="span-nuevo-arbol">
+    <button class="btn btn-primary " (click)="addComment()">Agregar</button>
+  </span> -->
+  <div class="conteiner">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id. </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.idUsuario}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.nombre}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="apellido">
+        <th mat-header-cell *matHeaderCellDef> Apellido </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.apellido}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fechaNacimiento">
+        <th mat-header-cell *matHeaderCellDef> Fecha de Nacimiento </th>
+        <td mat-cell *matCellDef="let usuario"> {{ usuario.fechaNacimiento | date: 'yyyy/MM/dd' }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telefono">
+        <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.telefono == 0 ? '--' : usuario.telefono}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codigoPais">
+        <th mat-header-cell *matHeaderCellDef> Codigo de País </th>
+        <td mat-cell *matCellDef="let usuario"> {{usuario.pais}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="recibeInfo">
+
+        <th mat-header-cell *matHeaderCellDef> Recibe Información </th>
+        <td mat-cell *matCellDef="let usuario"> {{ (usuario.recibeInfo == true ? 'Si' : 'No') }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let usuario" style="text-align: end;">
+          <a style="color:orange; margin-right: 5px ; cursor: pointer;" matTooltip="Editar" mat-raised-button
+            (click)="editUser(usuario)">
+            <mat-icon>edit</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let usuario" style="text-align: end;">
+
+          <a style="color:red; margin-right: 5px ; cursor: pointer;" matTooltip="Eliminar" mat-raised-button
+            (click)="openDialogDelete(usuario)">
+            <mat-icon style="color: red;">delete</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+    <mat-paginator #paginatorUsers [pageSize]="5" [pageSizeOptions]="[5,10,20,50,100]" showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+
+    <span class="span-nuevo-arbol" style="margin-top: 2em;">
+      <button class="btn btn-primary " (click)="NuevoUsuario()">Agregar Nuevo</button>
+    </span>
+
+  </div>
+
+
+
+</section>

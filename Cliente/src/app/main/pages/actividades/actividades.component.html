@@ -1,0 +1,48 @@
+<section class="arboles-admin__contenedor">
+
+  <h1 style="color :whitesmoke; text-align: center;" class="fix-margin"> Actividades</h1>
+  <!-- <span class="span-nuevo-arbol">
+    <button class="btn btn-primary " (click)="addComment()">Agregar</button>
+  </span> -->
+  <div class="conteiner">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id. </th>
+        <td mat-cell *matCellDef="let actividad"> {{actividad.idActividad}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fechaCreacion">
+        <th mat-header-cell *matHeaderCellDef> Fecha de actividad </th>
+        <td mat-cell *matCellDef="let actividad"> {{ actividad.fechaCreacion | date: 'dd/MM/yyyy' }} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="actividad">
+        <th mat-header-cell *matHeaderCellDef> Actividad</th>
+        <td mat-cell *matCellDef="let actividad"> {{actividad.actividad}} </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+    <mat-paginator #paginatorAct [pageSize]="5" [pageSizeOptions]="[5,10,20,50,100]" showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+
+
+
+  </div>
+
+
+
+</section>
